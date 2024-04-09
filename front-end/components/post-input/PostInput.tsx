@@ -23,15 +23,6 @@ const PostInput = () => {
 
   const hookForm = useForm({ defaultValues });
 
-  useEffect(() => {
-    (async () => {
-      const post = await getPosts();
-      console.log("🚀 ~ post:", post);
-      const comments = await getComments(post[0].id);
-      console.log("🚀 ~ comments:", comments);
-    })();
-  }, []);
-
   async function handleCreatePost(formData: IPostInput) {
     const post: IPost = {
       content: formData.content,

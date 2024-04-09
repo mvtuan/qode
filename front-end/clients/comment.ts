@@ -1,7 +1,7 @@
 import { IComment } from "@/interfaces/comment";
 
-const URL = "http://127.0.0.1:8080";
-// const URL = "http://localhost:8080";
+// const URL = "http://backend:8080";
+const URL = "http://localhost:8080";
 
 const options: RequestInit = {
   method: "GET",
@@ -17,7 +17,13 @@ type CommentResponse = {
 };
 
 export async function getComments(postID: string): Promise<CommentResponse> {
-  const res = await fetch(`${URL}/comments/?postID=${postID}`);
+  const res = await fetch(`${URL}/comments?postID=${postID}`);
+
+  console.log(
+    "🚀 ~ getComments ~ `${URL}/comments?postID=${postID}`:",
+    `${URL}/comments?postID=${postID}`
+  );
+
   return res.json();
 }
 export async function createComment(body: IComment) {

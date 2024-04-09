@@ -10,10 +10,11 @@ const options: RequestInit = {
 
 export async function getPost(postId: string) {
   const res = await fetch(`${URL}/post/${postId}`);
+  console.log("🚀 ~ getPost ~ URL:", URL);
   return res.json();
 }
 export async function getPosts() {
-  const res = await fetch(`${URL}/posts/`);
+  const res = await fetch(`${URL}/posts`);
 
   return res.json();
 }

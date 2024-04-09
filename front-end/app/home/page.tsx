@@ -30,7 +30,7 @@ export default async function Page() {
         <Stack gap={5}>
           {posts?.map((post, i) => (
             <Link key={post.id} href={`/post/${post.id}`}>
-              <Card maxWidth={"100%"} maxW="lg">
+              <Card maxWidth={"100%"} maxW="xl">
                 <CardBody>
                   <Image
                     minW={"100%"}

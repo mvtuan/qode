@@ -14,8 +14,9 @@ import {
 } from "@chakra-ui/react";
 
 async function loadData(postID: string): Promise<[IPost, IComment[]]> {
-  const post = await getPost(postID);
   const comments = await getComments(postID);
+  const post = await getPost(postID);
+  console.log("🚀 ~ loadData ~ comments:", comments);
 
   return [post.data, comments.data];
 }
