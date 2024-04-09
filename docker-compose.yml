@@ -2,14 +2,14 @@ version: "3"
 services:
   backend:
     build:
-      context: ./qode-be
+      context: ./back-end
       dockerfile: Dockerfile
     ports:
       - "8080:8080"
 
   frontend:
     build:
-      context: ./qode-challenge
+      context: ./front-end
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
